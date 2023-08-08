@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.play-area{
+    width: 50%;
+    height: 450px;
+    background-color: dodgerblue;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+    border: 5px solid #4169E1;
+}
+
+.choices-btn{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    margin-top: 5px;
+}
+
+.single-btn{
+    font-size: 20px;
+    padding: 5px;
+    margin: 5px 15px;
+    border: none;
+    background-color: dodgerblue;
+    color: white;
+    cursor: pointer;
+    width: 20%;
+    border-radius: 5px;
+    transition: .2s;
+}
+
+.single-btn:hover{
+    background-color: skyblue;
+}
+
+.comp-turn-el{
+    background-color:none;
+}
+
+.result{
+    background-color:none;
+}
+
+.player-turn-el{
+    background-color:none;
+}
+
+.margin-el{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+img{
+    width: 150px;
+    border-radius: 5px;
+}
+
+#comp-img{
+    width: 150px;
+    height: 165.5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+#player-img{
+    width: 150px;
+    height: 165.5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+#result{
+    border: 1px solid white;
+    width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.comp-and-player{
+    display: flex;
+    justify-content: center;
+}
+
+.computer-area{
+    margin: 10px 30px;
+    padding: 5px;
+}
+
+.player-area{
+    margin: 10px 30px;
+    padding: 5px;
+}
+
+#final-win-el{
+    font-weight: bold;
+}
