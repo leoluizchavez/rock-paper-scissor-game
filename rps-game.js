@@ -230,3 +230,16 @@ function addPoints(results){
         compare(playerPoints,compPoints)
     }
 */
+const resetBtn = document.getElementById("reset-btn")
+
+resetBtn.addEventListener("click", function(){
+    tries = 10
+    playerPointsEl.innerHTML = `Player points <br/> ...`
+    compPointsEl.innerHTML = `Computer points <br/> ...`
+    playerImgEl.innerHTML = ``
+    compImgEl.innerHTML = ``
+    compEl.innerHTML = `Computer Turn <br> ...` 
+    playerEl.innerHTML = `Player Turn <br> ...`
+    turnsEl.innerHTML = `Turns left <br/> ${tries}`
+    winnerEl.innerHTML = ``
+})

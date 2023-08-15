@@ -113,3 +113,16 @@ img{
 #final-win-el{
     font-weight: bold;
 }
+
+.reset-btn{
+    font-size: 20px;
+    padding: 5px;
+    margin: 5px 15px;
+    border: none;
+    background-color: dodgerblue;
+    color: white;
+    cursor: pointer;
+    width: 20%;
+    border-radius: 5px;
+    transition: .2s;
+}
