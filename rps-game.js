@@ -1,7 +1,7 @@
 // Rock Paper Scissors Game
 let game = ["Rock", "Paper", "Scissors"] // computer picks
 let gameImg = ["imgs/rock.png", "imgs/paper.png", "imgs/scissors.png"] //image file paths
-let compIndex = Math.floor(Math.random()*game.length) // this code determines the computer's picks
+// let compIndex = Math.floor(Math.random()*game.length) // this code determines the computer's picks
 let tries = 10 // number of tries
 let compPoints = 0 // number of computer points
 let playerPoints = 0 // number of player points
@@ -14,6 +14,7 @@ const playAreaEl = document.getElementById("play-area")
 const rockBtn = document.getElementById("rock-btn")
 const paperBtn = document.getElementById("paper-btn")
 const sciBtn = document.getElementById("sci-btn")
+const resetBtn = document.getElementById("reset-btn")
 
 // element variables
 const compEl = document.getElementById("comp-turn-el")
@@ -25,33 +26,7 @@ const winnerEl = document.getElementById("final-win-el")
 // image variables
 const compImgEl = document.getElementById("comp-img")
 const playerImgEl = document.getElementById("player-img")
-/*
-compEl.innerHTML = comp
-playerEl.innerHTML = input
-resultEl.innerHTML = result
-*/
-/*
-rockBtn.addEventListener("click", function(){
-    playerInput = "rock"
-    let result = startGame(playerInput)
-    console.log(result)
-    resultEl.innerHTML = result
-})
 
-paperBtn.addEventListener("click", function(){
-    playerInput = "paper"
-    let result = startGame(playerInput)
-    console.log(result)
-    resultEl.innerHTML = result
-})
-
-sciBtn.addEventListener("click", function(){
-    playerInput = "scissors"
-    let result = startGame(playerInput)
-    console.log(result)
-    resultEl.innerHTML = result
-})
-*/
 turnsEl.innerHTML = `Turns left <br/> ${tries}`
 console.log("Turns left: " + tries)
 
@@ -97,6 +72,20 @@ sciBtn.addEventListener("click", function(){
     }
 })
 
+resetBtn.addEventListener("click", function(){
+    tries = 10
+    compPoints = 0 
+    playerPoints = 0
+    playerPointsEl.innerHTML = `Player points <br/> ...`
+    compPointsEl.innerHTML = `Computer points <br/> ...`
+    playerImgEl.innerHTML = ``
+    compImgEl.innerHTML = ``
+    compEl.innerHTML = `Computer Turn <br> ...` 
+    playerEl.innerHTML = `Player Turn <br> ...`
+    turnsEl.innerHTML = `Turns left <br/> ${tries}`
+    winnerEl.innerHTML = ``
+})
+
 // this function will return 3 choices: win, tie, or lose
 function startGame(input){
     let compIndex = Math.floor(Math.random()*game.length)
@@ -140,45 +129,6 @@ function startGame(input){
 
 }
 
-
-/* Scratch code
-let tries = 0
-let compPoints = 0
-let playerPoints = 0
-*/
-
-//who wins function, this function compares the player and computer points to determine the final winner
-function compare(playerPoints,compPoints){
-    if(tries === 0){
-        if(playerPoints>compPoints){
-            winnerEl.innerHTML = `Final Winner: Player Wins!`
-            console.log("Final Winner: Player wins!")
-        } else if(playerPoints === compPoints){
-            winnerEl.innerHTML = `Final Winner: It's a tie!`
-            console.log("Final Winner: It's a tie!")
-        } else {
-            winnerEl.innerHTML = `Final Winner: Computer Wins!`
-            console.log("Final Winner: Computer wins!")
-        }
-    }
-}
-
-/* game limit
-while(tries>0){
-    console.log("Continue game")
-    console.log(tries)
-    console.log("When button is clicked tries is decremented by 1")
-}
-*/
-
-/* Finalizing the game
-if(tries === 0){
-    console.log("Game ends")
-    // "insert who wins function" here
-    console.log("Show winner")
-}
-*/
-
 // this function will evaluate the results to convert it into points
 function addPoints(results){ 
     if(results === "You win"){
@@ -206,40 +156,18 @@ function addPoints(results){
     }
 }
 
-// let results = startGame()
-// startGame() this function will return 3 choices: win, tie, or lose
-// addPoints(results) // this function will evaluate the results to convert it into points
-
-// insert this code to the addEventListener
-/*
-    if(tries !== 0){
-        let results = startGame(playerInput)
-        addPoints(results)
-    } else {
-        compare(playerPoints,compPoints)
+//who wins function, this function compares the player and computer points to determine the final winner
+function compare(playerPoints,compPoints){
+    if(tries === 0){
+        if(playerPoints>compPoints){
+            winnerEl.innerHTML = `Final Winner: Player Wins!`
+            console.log("Final Winner: Player wins!")
+        } else if(playerPoints === compPoints){
+            winnerEl.innerHTML = `Final Winner: It's a tie!`
+            console.log("Final Winner: It's a tie!")
+        } else {
+            winnerEl.innerHTML = `Final Winner: Computer Wins!`
+            console.log("Final Winner: Computer wins!")
+        }
     }
-*/
-/*
-    if(tries !== 0){
-        playerInput = "rock"
-        let result = startGame(playerInput)
-        console.log(result)
-        resultEl.innerHTML = result
-        addPoints(result)
-    } else {
-        compare(playerPoints,compPoints)
-    }
-*/
-const resetBtn = document.getElementById("reset-btn")
-
-resetBtn.addEventListener("click", function(){
-    tries = 10
-    playerPointsEl.innerHTML = `Player points <br/> ...`
-    compPointsEl.innerHTML = `Computer points <br/> ...`
-    playerImgEl.innerHTML = ``
-    compImgEl.innerHTML = ``
-    compEl.innerHTML = `Computer Turn <br> ...` 
-    playerEl.innerHTML = `Player Turn <br> ...`
-    turnsEl.innerHTML = `Turns left <br/> ${tries}`
-    winnerEl.innerHTML = ``
-})
+}
