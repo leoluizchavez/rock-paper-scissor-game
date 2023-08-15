@@ -1,7 +1,6 @@
 // Rock Paper Scissors Game
 let game = ["Rock", "Paper", "Scissors"] // computer picks
 let gameImg = ["imgs/rock.png", "imgs/paper.png", "imgs/scissors.png"] //image file paths
-// let compIndex = Math.floor(Math.random()*game.length) // this code determines the computer's picks
 let tries = 10 // number of tries
 let compPoints = 0 // number of computer points
 let playerPoints = 0 // number of player points
@@ -88,7 +87,7 @@ resetBtn.addEventListener("click", function(){
 
 // this function will return 3 choices: win, tie, or lose
 function startGame(input){
-    let compIndex = Math.floor(Math.random()*game.length)
+    let compIndex = Math.floor(Math.random()*game.length) //this code determines the computer's picks
     let comp = game[compIndex]
     let compImg = gameImg[compIndex]
     console.log("You: " + input)
