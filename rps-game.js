@@ -71,7 +71,7 @@ sciBtn.addEventListener("click", function(){
     }
 })
 
-resetBtn.addEventListener("click", function(){
+resetBtn.addEventListener("dblclick", function(){
     tries = 10
     compPoints = 0 
     playerPoints = 0
@@ -81,6 +81,7 @@ resetBtn.addEventListener("click", function(){
     compImgEl.innerHTML = ``
     compEl.innerHTML = `Computer Turn <br> ...` 
     playerEl.innerHTML = `Player Turn <br> ...`
+    resultEl.innerHTML = `...`
     turnsEl.innerHTML = `Turns left <br/> ${tries}`
     winnerEl.innerHTML = ``
 })
