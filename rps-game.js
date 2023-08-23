@@ -1,6 +1,6 @@
 // Rock Paper Scissors Game
-let game = ["Rock", "Paper", "Scissors"] // computer picks
-let gameImg = ["imgs/rock.png", "imgs/paper.png", "imgs/scissors.png"] //image file paths
+const game = ["Rock", "Paper", "Scissors"] // computer picks
+const gameImg = ["imgs/rock.png", "imgs/paper.png", "imgs/scissors.png"] //image file paths
 let tries = 10 // number of tries
 let compPoints = 0 // number of computer points
 let playerPoints = 0 // number of player points
@@ -77,13 +77,13 @@ resetBtn.addEventListener("dblclick", function(){
     playerPoints = 0
     playerPointsEl.innerHTML = `Player points <br/> ...`
     compPointsEl.innerHTML = `Computer points <br/> ...`
-    playerImgEl.innerHTML = ``
-    compImgEl.innerHTML = ``
+    playerImgEl.textContent = ``
+    compImgEl.textContent = ``
     compEl.innerHTML = `Computer Turn <br> ...` 
     playerEl.innerHTML = `Player Turn <br> ...`
-    resultEl.innerHTML = `...`
+    resultEl.textContent = `...`
     turnsEl.innerHTML = `Turns left <br/> ${tries}`
-    winnerEl.innerHTML = ``
+    winnerEl.textContent = ``
 })
 
 // this function will return 3 choices: win, tie, or lose
