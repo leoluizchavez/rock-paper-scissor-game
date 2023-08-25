@@ -1,4 +1,4 @@
-*{
+body{
     margin: 0;
     padding: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -7,7 +7,7 @@
 .play-area{
     width: 50%;
     height: 450px;
-    background-color: dodgerblue;
+    background-image: linear-gradient(to right, #06beb6,  #48b1bf);
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -15,7 +15,8 @@
     color: white;
     text-align: center;
     margin-top: 30px;
-    border: 5px solid #4169E1;
+    border: none;
+    border-radius: 10px;
 }
 
 .choices-btn{
@@ -33,7 +34,7 @@
     padding: 5px;
     margin: 5px 15px;
     border: none;
-    background-color: dodgerblue;
+    background-image: linear-gradient(to right, #02aab0, #00cdac);
     color: white;
     cursor: pointer;
     width: 20%;
@@ -119,7 +120,7 @@ img{
     padding: 5px;
     margin: 5px 15px;
     border: none;
-    background-color: dodgerblue;
+    background-image: linear-gradient(to right, #02aab0, #00cdac);
     color: white;
     cursor: pointer;
     width: 20%;
