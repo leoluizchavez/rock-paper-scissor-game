@@ -1,6 +1,7 @@
 // Rock Paper Scissors Game
 const game = ["Rock", "Paper", "Scissors"] // computer picks
 const gameImg = ["imgs/rock.png", "imgs/paper.png", "imgs/scissors.png"] //image file paths
+
 let tries = 10 // number of tries
 let compPoints = 0 // number of computer points
 let playerPoints = 0 // number of player points
@@ -27,18 +28,15 @@ const compImgEl = document.getElementById("comp-img")
 const playerImgEl = document.getElementById("player-img")
 
 turnsEl.innerHTML = `Turns left <br/> ${tries}`
-console.log("Turns left: " + tries)
 
 rockBtn.addEventListener("click", function(){
     if(tries !== 0){ //this if statement runs the code as longs as tries is not zero, this prevents the program from running the code even after tries has reached zero
         playerInput = "Rock"
         playerImgEl.innerHTML = `<img class="rock-img" src="${gameImg[0]}" alt="rock hand gesture">`
         let result = startGame(playerInput)
-        console.log(result)
         resultEl.innerHTML = result
         addPoints(result)
         turnsEl.innerHTML = `Turns left <br/> ${tries}`
-        console.log("Turns left: " + tries)
         compare(playerPoints,compPoints)
     }
 })
@@ -48,11 +46,9 @@ paperBtn.addEventListener("click", function(){
         playerInput = "Paper"
         playerImgEl.innerHTML = `<img class="paper-img" src="${gameImg[1]}" alt="paper hand gesture">`
         let result = startGame(playerInput)
-        console.log(result)
         resultEl.innerHTML = result
         addPoints(result)
         turnsEl.innerHTML = `Turns left <br/> ${tries}`
-        console.log("Turns left: " + tries)
         compare(playerPoints,compPoints)
     }
 })
@@ -62,11 +58,9 @@ sciBtn.addEventListener("click", function(){
         playerInput = "Scissors"
         playerImgEl.innerHTML = `<img class="paper-img" src="${gameImg[2]}" alt="paper hand gesture">`
         let result = startGame(playerInput)
-        console.log(result)
         resultEl.innerHTML = result
         addPoints(result)
         turnsEl.innerHTML = `Turns left <br/> ${tries}`
-        console.log("Turns left: " + tries)
         compare(playerPoints,compPoints)
     }
 })
@@ -91,8 +85,6 @@ function startGame(input){
     let compIndex = Math.floor(Math.random()*game.length) //this code determines the computer's picks
     let comp = game[compIndex]
     let compImg = gameImg[compIndex]
-    console.log("You: " + input)
-    console.log("Computer: " + comp)
     compImgEl.innerHTML = `<img src=${compImg}>`
     compEl.innerHTML = `Computer Turn <br> ${comp}` 
     playerEl.innerHTML = `Player Turn <br> ${input}`
@@ -136,23 +128,17 @@ function addPoints(results){
         tries--// decrement tries by 1 
         playerPointsEl.innerHTML = `Player points <br/> ${playerPoints}`
         compPointsEl.innerHTML = `Computer points <br/> ${compPoints}`
-        console.log("Player points: " + playerPoints)
-        console.log("Computer points: " + compPoints)
     }else if(results === "It's a tie"){
         playerPoints++
         compPoints++
         tries--
         playerPointsEl.innerHTML = `Player points <br/> ${playerPoints}`
         compPointsEl.innerHTML = `Computer points <br/> ${compPoints}`
-        console.log("Player points: " + playerPoints)
-        console.log("Computer points: " + compPoints)
     } else if(results === "You lose"){
         compPoints++
         tries--
         playerPointsEl.innerHTML = `Player points <br/> ${playerPoints}`
         compPointsEl.innerHTML = `Computer points <br/> ${compPoints}`
-        console.log("Player points: " + playerPoints)
-        console.log("Computer points: " + compPoints)
     }
 }
 
@@ -161,13 +147,10 @@ function compare(playerPoints,compPoints){
     if(tries === 0){
         if(playerPoints>compPoints){
             winnerEl.innerHTML = `Final Winner: Player Wins!`
-            console.log("Final Winner: Player wins!")
         } else if(playerPoints === compPoints){
             winnerEl.innerHTML = `Final Winner: It's a tie!`
-            console.log("Final Winner: It's a tie!")
         } else {
             winnerEl.innerHTML = `Final Winner: Computer Wins!`
-            console.log("Final Winner: Computer wins!")
         }
     }
 }
