@@ -89,37 +89,21 @@ function startGame(input){
     compEl.innerHTML = `Computer Turn <br> ${comp}` 
     playerEl.innerHTML = `Player Turn <br> ${input}`
 
-    if(input === "Rock"){
-        if(comp === "Scissors"){
-            return "You win"
-        } else if(comp === "Rock"){
-            return "It's a tie"
-        } else if(comp === "Paper") {
-            return "You lose"
-        }
-    }
-    
-    else if(input === "Paper"){
-        if(comp === "Rock"){
-            return "You win"
-        } else if(comp === "Paper"){
-            return "It's a tie"
-        } else if(comp === "Scissors") {
-            return "You lose"
-        }
-    }
-    
-    else if(input === "Scissors"){
-        if(comp === "Paper"){
-            return "You win"
-        } else if(comp === "Scissors"){
-            return "It's a tie"
-        } else if(comp === "Rock"){
-            return "You lose"
-        }
+    if (input === comp){
+        return "It's a tie"
+    } else if (input === "Rock" && comp === "Paper"){
+        return "You win"
+    } else if (input === "Paper" && comp === "Rock") {
+        return "You win"
+    } else if (input === "Scissors" && comp === "Paper"){
+        return "You win"
+    } else {
+        return "You lose"
     }
 
 }
+
+
 
 // this function will evaluate the results to convert it into points
 function addPoints(results){ 
